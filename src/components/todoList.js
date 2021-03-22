@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {Context} from '../App';
+import {Context} from '../stores/store';
 // import {reducer} from '../stores/reducer';
 
 const TodoList = () => {

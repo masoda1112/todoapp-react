@@ -1,27 +1,13 @@
 import TodoList from '../src/components/todoList'
 import './App.css';
-import {createContext, useReducer, useState} from 'react';
-import reducer from './stores/reducer';
+import {Provider} from "./stores/store"
 
-const Context = createContext('')
-
-function App() {
-  const initialState = [
-    {task: 'ゴミ捨て', isCompleted: false},
-    {task: '掃除', isCompleted: false},
-    {task: '洗濯', isCompleted: false}
-  ]
-
-  const [task, setTask] = useState('')
-  const [state, dispatch] = useReducer(reducer, initialState)
-  
-
+const App = () => {
   return (
-      <Context.Provider value={{state, dispatch}}>
-        <TodoList />
-      </Context.Provider>
-  );
+    <Provider>
+      <TodoList />
+    </Provider>
+  )
 }
 
 export default App;
-export {Context}
